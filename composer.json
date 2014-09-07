@@ -1,0 +1,31 @@
+{
+    "name": "athletics/permalinks-with-coauthors",
+    "description": "Allows use of co-author nicename in permalink structure.",
+    "homepage": "https://github.com/athletics/permalinks-with-coauthors",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Athletics",
+            "homepage": "http://athleticsnyc.com/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "automattic/co-authors-plus",
+                "type": "wordpress-plugin",
+                "version": "dev-master",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/Automattic/Co-Authors-Plus.git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "automattic/co-authors-plus": "dev-master"
+    }
+}
