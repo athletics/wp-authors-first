@@ -1,7 +1,7 @@
 {
-    "name": "athletics/permalinks-with-coauthors",
+    "name": "athletics/wp-authors-first",
     "description": "Allows use of co-author nicename in permalink structure.",
-    "homepage": "https://github.com/athletics/permalinks-with-coauthors",
+    "homepage": "https://github.com/athletics/wp-authors-first",
     "type": "wordpress-plugin",
     "license": "GPL-2.0+",
     "authors": [
