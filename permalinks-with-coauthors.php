@@ -17,10 +17,8 @@ class CoAuthorsPermalinks {
 
 	public function __construct() {
 
-		add_action( 'init', function() {
-			$this->drop_author_rewrites();
-			$this->add_rewrite_tag();
-		} );
+		add_action( 'init', array( $this, 'drop_author_rewrites' ) );
+		add_action( 'init', array( $this, 'add_rewrite_tag' ) );
 
 		add_action( 'parse_request', array( $this, 'maninpulate_request' ) );
 		add_action( 'template_redirect', array( $this, 'setup_author_archive' ) );
