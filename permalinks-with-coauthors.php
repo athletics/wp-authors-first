@@ -110,18 +110,16 @@ class CoAuthorsPermalinks {
 		$parts = explode( '/', $pagename );
 		$count = count( $parts );
 
-		if (
-			(isset($parts[1]) && strlen($parts[1]) > 2) &&
-			($parts[0] == '2010' || $parts[0] == '2011' || $parts[0] == '2012' || $parts[0] == '2013')
-		) {
-			$this->redirect_historical_post( $parts, $wp );
+		if ( $count === 1 ) return;
+
+		if ( $parts[0] === 'author' && strlen( $parts[1] ) > 3 ) {
+			$this->redirect_historical_author( $parts, $wp );
 		}
 		else if (
-			$count > 1 &&
-			$parts[0] === 'author' &&
-			strlen( $parts[1] ) > 3
+			( strlen( $parts[0] ) === 4 && checkdate( 1, 1, (int) $parts[0] ) ) &&
+			strlen( $parts[1] ) > 2
 		) {
-			$this->redirect_historical_author( $parts, $wp );
+			$this->redirect_historical_post( $parts, $wp );
 		}
 
 	}
