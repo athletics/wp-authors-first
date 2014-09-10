@@ -99,6 +99,7 @@ class CoAuthorsPermalinks {
 
 	/**
 	 * Redirect Historical to New Permalink Structure
+	 * /%year%/%postname%/ => /%__coauthor%/%year%/%monthnum%/%postname%/
 	 *
 	 * @todo consider different kinds of permalink structure
 	 * @param object $wp
@@ -112,12 +113,19 @@ class CoAuthorsPermalinks {
 
 		if ( $count === 1 ) return;
 
-		if ( $parts[0] === 'author' && strlen( $parts[1] ) > 3 ) {
+		if (
+			$parts[0] === 'author' &&
+			strlen( $parts[1] ) > 3 // author slug minimum is 3 characters
+		) {
 			$this->redirect_historical_author( $parts, $wp );
 		}
+
+		// Note:
+		// Logic is specific to Thought Catalog's previous permalink structure /%year%/%postname%/
+		// This could be abstracted to use any previous permalink structure
 		else if (
-			( strlen( $parts[0] ) === 4 && checkdate( 1, 1, (int) $parts[0] ) ) &&
-			strlen( $parts[1] ) > 2
+			( strlen( $parts[0] ) === 4 && checkdate( 1, 1, (int) $parts[0] ) ) && // is year
+			strlen( $parts[1] ) > 2 // post slug minimum
 		) {
 			$this->redirect_historical_post( $parts, $wp );
 		}
