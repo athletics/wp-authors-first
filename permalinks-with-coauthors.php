@@ -17,10 +17,6 @@ class CoAuthorsPermalinks {
 
 	public function __construct() {
 
-		if ( ! class_exists( 'coauthors_plus' ) ) {
-			return new WP_Error( 'fatal_error', __CLASS__ . ' requires Co-Authors Plus.' );
-		}
-
 		add_action( 'init', function() {
 			$this->drop_author_rewrites();
 			$this->add_rewrite_tag();
