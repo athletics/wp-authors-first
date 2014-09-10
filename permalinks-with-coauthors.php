@@ -62,7 +62,7 @@ class CoAuthorsPermalinks {
 
 		// Is this a historical request in need of redirection?
 		if ( ! $coauthor ) {
-			$this->redirect_historical();
+			$this->redirect_historical( $wp );
 		}
 
 		// Is this a page?
@@ -103,7 +103,7 @@ class CoAuthorsPermalinks {
 	 * @todo consider different kinds of permalink structure
 	 * @param object $wp
 	 */
-	public function redirect_historical() {
+	public function redirect_historical( $wp ) {
 		$pagename = isset( $wp->query_vars['pagename'] ) ? $wp->query_vars['pagename'] : false;
 		if ( ! $pagename ) return;
 
