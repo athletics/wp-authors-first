@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Permalinks with Co-Authors
+ * Plugin Name: WP Authors First
  * Plugin URI: https://github.com/athletics/permalinks-with-coauthors
  * Description: Allows use of co-author nicename in permalink structure.
  * Version: 1.0
@@ -13,7 +13,7 @@
 namespace Athletics;
 use WP_Error;
 
-class CoAuthorsPermalinks {
+class WP_Authors_First {
 
 	public function __construct() {
 
@@ -357,4 +357,4 @@ class CoAuthorsPermalinks {
 
 }
 
-return new CoAuthorsPermalinks();
+return new WP_Authors_First();
