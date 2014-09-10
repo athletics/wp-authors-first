@@ -24,7 +24,7 @@ class CoAuthorsPermalinks {
 		add_action( 'template_redirect', array( $this, 'setup_author_archive' ) );
 		add_action( 'template_redirect', array( $this, 'redirect_primary_coauthor' ) );
 
-		add_filter( 'author_link', array( $this, 'remove_author_prefix' ), 20 ); // Needs to be >10 for some reason
+		add_filter( 'author_link', array( $this, 'remove_author_prefix' ), 20 );
 		add_filter( 'post_link', array( $this, 'replace_rewrite_tag' ), 10, 2 );
 
 	}
